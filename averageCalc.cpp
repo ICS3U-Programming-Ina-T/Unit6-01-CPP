@@ -22,7 +22,7 @@ int main() {
 
     // declaring variables
     float average;
-    int listOfInts;
+    int listOfInts[10];
 
     // display opening message
     std::cout << "This program generates a list of random ";
@@ -47,17 +47,15 @@ int main() {
         randomNumber = idist(rgen);
 
         // declaring array variable
-        listOfInts = randomNumber;
-        sum = sum + listOfInts;
-        std::cout << listOfInts << " added to the list at position " << counter;
+        listOfInts[counter] = randomNumber;
+        sum = sum + listOfInts[counter];
+        std::cout << listOfInts[counter] << " added to the list at position " << counter;
         std::cout << std::endl;
-
-        // determine if array is full
-        // calculate and display average
-        if (counter == 9) {
-            average = sum / MAX_ARRAY_SIZE;
-            std::cout << std::endl;
-            std::cout << "The average is " << average;
-        }
+    }
+    
+    for (counter = 0; counter < 1; counter++) {
+        average = sum / MAX_ARRAY_SIZE;
+        std::cout << std::endl;
+        std::cout << "The average is " << average;
     }
 }
